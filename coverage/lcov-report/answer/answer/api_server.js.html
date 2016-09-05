@@ -1,0 +1,608 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for answer/answer/api_server.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">answer/answer/</a> api_server.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">7.27% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>8/110</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/24</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/11</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">7.48% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>8/107</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">global._ = require('underscore');
+var fs = require("fs");
+var bodyParser = require('body-parser');
+var basicAuth = require('basic-auth');
+var DBMigrate = require('db-migrate');
+var path = require("path");
+&nbsp;
+const EventEmitter = require('events');
+&nbsp;
+class ApiServer {
+  static requireLocal <span class="fstat-no" title="function not covered" >(file) {</span>
+<span class="cstat-no" title="statement not covered" >    console.log(process.cwd())</span>
+<span class="cstat-no" title="statement not covered" >    return require(process.cwd() + file);</span>
+  }
+  constructor<span class="fstat-no" title="function not covered" >(customSettings = {}) {</span>
+<span class="cstat-no" title="statement not covered" >    this.requireLocal = (path) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      ApiServer.requireLocal.bind(this)(path)</span>
+    }
+<span class="cstat-no" title="statement not covered" >    this.CONFIG = customSettings;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    this.express = require('express');</span>
+<span class="cstat-no" title="statement not covered" >    this.app = this.express(<span class="fstat-no" title="function not covered" >function(req){</span>});</span>
+<span class="cstat-no" title="statement not covered" >    this.emitter = new EventEmitter();</span>
+<span class="cstat-no" title="statement not covered" >    let cors = require('cors');</span>
+<span class="cstat-no" title="statement not covered" >    this.app.use(cors());</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    this.client = this.app.get('connection');</span>
+<span class="cstat-no" title="statement not covered" >    this.database();</span>
+<span class="cstat-no" title="statement not covered" >    this.controllers();</span>
+ 
+<span class="cstat-no" title="statement not covered" >    this.routes = {};</span>
+&nbsp;
+    // current version of the api
+<span class="cstat-no" title="statement not covered" >    this.api_current = this.express(<span class="fstat-no" title="function not covered" >function(req){</span>});</span>
+<span class="cstat-no" title="statement not covered" >    this.api_current.use(cors());</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    let server = this;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    this.app.use(bodyParser.json({ type: 'application/json' }));</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    this.app.use(<span class="fstat-no" title="function not covered" >function(req, res, next){</span></span>
+<span class="cstat-no" title="statement not covered" >      res.setHeader('Content-Type', 'application/json');</span>
+<span class="cstat-no" title="statement not covered" >      req.accepts('application/json');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      if (CONFIG.BYPASS_SECRET) {</span>
+<span class="cstat-no" title="statement not covered" >        return next();</span>
+      } else {
+<span class="cstat-no" title="statement not covered" >        let unauthorized = (res) =&gt; { <span class="cstat-no" title="statement not covered" >return res.sendStatus(401); </span>};</span>
+<span class="cstat-no" title="statement not covered" >        let gotOrg = (org, isPrivate, isVendor)=&gt; {</span>
+<span class="cstat-no" title="statement not covered" >          if (org) {</span>
+<span class="cstat-no" title="statement not covered" >            server.currentIdentity = org;</span>
+<span class="cstat-no" title="statement not covered" >            server.currentIdentity.private = isPrivate;</span>
+<span class="cstat-no" title="statement not covered" >            server.currentIdentity.vendor = isVendor;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            return next();</span>
+          } else {
+<span class="cstat-no" title="statement not covered" >            return unauthorized(res);</span>
+          }
+        };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        let id = req.get('authorization-id');</span>
+<span class="cstat-no" title="statement not covered" >        let key = req.get('authorization-key');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if(id &amp; key) {</span>
+<span class="cstat-no" title="statement not covered" >          return server.authenticateKeys({ id, key }).then(gotOrg).catch((err) =&gt; { <span class="cstat-no" title="statement not covered" >return unauthorized(res); </span>});</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >          res.set('WWW-Authenticate', 'Basic realm=Authorization Required');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >          let user = basicAuth(req);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >          if (user &amp;&amp; user.name &amp;&amp; user.pass) {</span>
+<span class="cstat-no" title="statement not covered" >            if (user.name === CONFIG.SUPER_ADMIN_ID &amp;&amp; user.pass === CONFIG.SUPER_ADMIN_PRIVATE) {</span>
+<span class="cstat-no" title="statement not covered" >              gotOrg({ superAdmin: true }, true, false);</span>
+            } else {
+<span class="cstat-no" title="statement not covered" >              return server.authenticateKeys({ id: user.name, key: user.pass }).then(gotOrg).catch((err) =&gt; { <span class="cstat-no" title="statement not covered" >return unauthorized(res); </span>});</span>
+            }
+          } else {
+<span class="cstat-no" title="statement not covered" >            return unauthorized(res);</span>
+          }
+        }
+      }
+    });
+  }
+&nbsp;
+  database<span class="fstat-no" title="function not covered" >() {</span>
+<span class="cstat-no" title="statement not covered" >    let className;</span>
+<span class="cstat-no" title="statement not covered" >    let server = this;</span>
+<span class="cstat-no" title="statement not covered" >    this.db = this.requireLocal('/config/db/connection')(this.CONFIG);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    let files = fs.readdirSync('./models');</span>
+<span class="cstat-no" title="statement not covered" >    files.forEach((file) =&gt;</span>
+      (<span class="cstat-no" title="statement not covered" >className = file.replace(".js", ""),</span>
+      server[className] = this.requireLocal(`/models/${file}`),
+      server[className].db = this.db,
+      server[className].server = server)
+    );
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    this.emitter.emit("database.connected")</span>
+  }
+&nbsp;
+  controllers<span class="fstat-no" title="function not covered" >() {</span>
+<span class="cstat-no" title="statement not covered" >    let server = this;</span>
+<span class="cstat-no" title="statement not covered" >    let files = fs.readdirSync('./api');</span>
+<span class="cstat-no" title="statement not covered" >    files.forEach((file) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      let className = file.replace(".js", "");</span>
+<span class="cstat-no" title="statement not covered" >      if (className === 'controller') {</span>
+<span class="cstat-no" title="statement not covered" >        return;</span>
+      }
+<span class="cstat-no" title="statement not covered" >      let thisClass = this.requireLocal(`/api/${file}`);</span>
+<span class="cstat-no" title="statement not covered" >      return server[className] = new thisClass(this);</span>
+    });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    this.emitter.emit("controllers.loaded")</span>
+  }
+&nbsp;
+  stop <span class="fstat-no" title="function not covered" >() {</span>
+<span class="cstat-no" title="statement not covered" >    this.listener.close();</span>
+<span class="cstat-no" title="statement not covered" >    this.emitter.emit("stop")</span>
+<span class="cstat-no" title="statement not covered" >    let keys = Object.keys(this.backgroundJobs);</span>
+<span class="cstat-no" title="statement not covered" >    for (let i = keys.length; i--;) {</span>
+<span class="cstat-no" title="statement not covered" >      let className = keys[i];</span>
+<span class="cstat-no" title="statement not covered" >      this.backgroundJobs[className].stop();</span>
+<span class="cstat-no" title="statement not covered" >      this.emitter.emit(`backgroundJobs.${className}.stopped`)</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    this.emitter.emit("stopped")</span>
+  }
+&nbsp;
+  start<span class="fstat-no" title="function not covered" >() {</span>
+<span class="cstat-no" title="statement not covered" >    this.started = new Promise((resolve, reject) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      let server = this;</span>
+<span class="cstat-no" title="statement not covered" >      let files = fs.readdirSync('./jobs');</span>
+<span class="cstat-no" title="statement not covered" >      let routes = Object.keys(this.routes);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      server.backgroundJobs = {};</span>
+<span class="cstat-no" title="statement not covered" >      for (let i = 0; i &lt; files.length; i++) {</span>
+<span class="cstat-no" title="statement not covered" >        let file = files[i];</span>
+<span class="cstat-no" title="statement not covered" >        let className = file.replace(".js", "");</span>
+<span class="cstat-no" title="statement not covered" >        var jobClass = this.requireLocal(`/jobs/${file}`);</span>
+<span class="cstat-no" title="statement not covered" >        server.backgroundJobs[className] = new jobClass(server);</span>
+<span class="cstat-no" title="statement not covered" >        server.backgroundJobs[className].start();</span>
+      }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      for (let i = routes.length; i--;) {</span>
+<span class="cstat-no" title="statement not covered" >        let key = routes[i];</span>
+<span class="cstat-no" title="statement not covered" >        let route = key;</span>
+<span class="cstat-no" title="statement not covered" >        let apiName = `api_${route}`;</span>
+<span class="cstat-no" title="statement not covered" >        let route_prefix = `/${route}/`;</span>
+<span class="cstat-no" title="statement not covered" >        if (route === 'current') {</span>
+<span class="cstat-no" title="statement not covered" >          route_prefix = '/';</span>
+        }
+<span class="cstat-no" title="statement not covered" >        this.routes[key].init.call(this, apiName);</span>
+<span class="cstat-no" title="statement not covered" >        this.app.use(route_prefix, this[apiName]);</span>
+      }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      this.listener = this.app.listen(CONFIG.PORT || CONFIG.API_SERVER_PORT || 3000, <span class="fstat-no" title="function not covered" >function(req, res){</span></span>
+<span class="cstat-no" title="statement not covered" >        let host = this.address().address;</span>
+<span class="cstat-no" title="statement not covered" >        let { port } = this.address();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        console.log('API listening at http://%s:%s', host, port);</span>
+<span class="cstat-no" title="statement not covered" >        server.emitter.emit('started')</span>
+<span class="cstat-no" title="statement not covered" >        resolve();</span>
+      });
+    });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return this.started;</span>
+  }
+&nbsp;
+  authenticateKeys <span class="fstat-no" title="function not covered" >(loginInfo) {</span>
+<span class="cstat-no" title="statement not covered" >    let authTable = this.Organization;</span>
+<span class="cstat-no" title="statement not covered" >    let isVendor = false;</span>
+<span class="cstat-no" title="statement not covered" >    if (loginInfo.id.indexOf('vendor-') !== -1) {</span>
+<span class="cstat-no" title="statement not covered" >      authTable = this.Vendor;</span>
+<span class="cstat-no" title="statement not covered" >      isVendor = true;</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return authTable.authenticate(loginInfo);</span>
+  }
+}
+&nbsp;
+module.exports = ApiServer;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Sep 05 2016 12:51:08 GMT-0400 (EDT)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>
